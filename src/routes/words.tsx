@@ -37,7 +37,6 @@ const config = {
  useEffect(() => {
        axios.request(config)
       .then((response) => {
-        console.log(response.data.data.words);
         setWords(response.data.data.words)
       })
       .catch((error) => {
