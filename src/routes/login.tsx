@@ -14,9 +14,9 @@ export default function Login() {
      },
      onSubmit: values => {
        const data = {
-        'grant_type': import.meta.env.GRANT_TYPE,
-        'client_id': import.meta.env.CLIENT_ID,
-        'client_secret': import.meta.env.CLIENT_SECRET,
+        'grant_type': import.meta.env.VITE_GRANT_TYPE,
+        'client_id': import.meta.env.VITE_CLIENT_ID,
+        'client_secret': import.meta.env.VITE_CLIENT_SECRET,
         'scope': import.meta.env.VITE_SCOPE,
         'username': values.username,
         'password': values.password 
@@ -25,7 +25,7 @@ export default function Login() {
         const config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'https://edeaf-api-staging.azurewebsites.net/connect/token',
+        url: `${import.meta.env.VITE_API_BASE_URL}/connect/token`,
         headers: { 
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -36,7 +36,6 @@ export default function Login() {
         .then((response) => {
         localStorage.setItem('token', response.data.access_token)
         navigate("/Register")
-        console.log(JSON.stringify(response.data));
         })
         .catch((error) => {
         console.log(error);

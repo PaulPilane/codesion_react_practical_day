@@ -43,8 +43,7 @@ export default function Register() {
         };
 
         axios.request(config)
-        .then((response) => {
-        console.log(JSON.stringify(response.data));
+        .then(() => {
         navigate('/categories')
         })
         .catch((error) => {

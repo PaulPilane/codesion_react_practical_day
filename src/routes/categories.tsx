@@ -31,7 +31,6 @@ const config = {
  useEffect(() => {
        axios.request(config)
       .then((response) => {
-        console.log(response.data.data);
         setCategories(response.data.data)
       })
       .catch((error) => {
