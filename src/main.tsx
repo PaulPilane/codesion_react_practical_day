@@ -4,10 +4,10 @@ import {
 } from "react-router-dom";
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import Login from "./routes/login";
-import Register from "./routes/register";
-import Categories from "./routes/categories";
-import Word from "./routes/words";
+import Login from "./pages/login";
+import Register from "./pages/register";
+import Categories from "./pages/categories";
+import Word from "./pages/words";
 
 const router = createBrowserRouter([
   {
