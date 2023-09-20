@@ -44,25 +44,32 @@ const config = {
 
     
       return (
-       <>
+    <>
       <h1 className="text-3xl font-bold mt-4 flex justify-center">Categories</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
         {categories.map((category) => (
           <Link
             key={category.id}
             to={`/category/${category.id}`}
-            className="bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 transition-transform transform hover:scale-105 p-4"
+            className="bg-white border border-gray-200 rounded-lg shadow hover:bg-green-600 transition-transform transform hover:scale-105 p-4"
           >
             {category.name}
           </Link>
         ))}
       </div>
 
-
-      <div>
-        <button onClick={goToRegister} type="button"> </button>
+      <div className="mt-4 flex justify-center">
+        <button
+          onClick={goToRegister}
+          type="button"
+          className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300 ease-in-out"
+        >
+          Back To Register
+        </button>
       </div>
     </>
+
+
 
       );
 }
