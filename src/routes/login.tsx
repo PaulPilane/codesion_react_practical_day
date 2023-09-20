@@ -14,7 +14,7 @@ export default function Login() {
      },
      onSubmit: values => {
        const data = {
-        'grant_type': 'password',
+        'grant_type': import.meta.env.GRANT_TYPE,
         'client_id': import.meta.env.CLIENT_ID,
         'client_secret': import.meta.env.CLIENT_SECRET,
         'scope': import.meta.env.VITE_SCOPE,
