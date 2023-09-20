@@ -15,33 +15,9 @@ const navigate = useNavigate();
     email: "",
   });
 
-  useEffect(() => {
-    const config = {
-      method: 'get',
-      maxBodyLength: Infinity,
-      url: `${import.meta.env.VITE_API_BASE_URL}/v1/admin/Users/current`,
-      headers: { 
-        'Content-Type': 'application/json', 
-        'Authorization':   `Bearer ${access_token}`
-      }
-    };
-
-    axios.request(config)
-      .then((response) => {
-        const { name, lastName, email } = response.data.data;
-        setUserData({ name, surname: lastName, email });
-      })
-      .catch((error) => {
-        console.log(error);
-        if (error.response && error.response.status === 401) {
-          navigate("/login");
-        }
-      });
-  }, [access_token, navigate]);
-
-  const formik = useFormik({
+   const formik = useFormik({
     initialValues: {
-      name: userData.name || " --",
+      name: userData.name || "",
       surname: userData.surname || "",
       email: userData.email || "",
     },
@@ -79,6 +55,37 @@ const navigate = useNavigate();
      },
    });
 
+
+  useEffect(() => {
+    const config = {
+      method: 'get',
+      maxBodyLength: Infinity,
+      url: `${import.meta.env.VITE_API_BASE_URL}/v1/admin/Users/current`,
+      headers: { 
+        'Content-Type': 'application/json', 
+        'Authorization':   `Bearer ${access_token}`
+      }
+    };
+
+    axios.request(config)
+      .then((response) => {
+        const { name, lastName, email } = response.data.data;
+        formik.setValues({
+          name: name,
+          surname: lastName,
+          email: email
+        });
+        setUserData({ name, surname: lastName, email });
+      })
+      .catch((error) => {
+        console.log(error);
+        if (error.response && error.response.status === 401) {
+          navigate("/login");
+        }
+      });
+  }, []);
+
+ 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
        <form
