@@ -7,7 +7,20 @@ export default function Word() {
 const access_token = localStorage.getItem("token")
 const { id } = useParams();
 const navigate = useNavigate();
-const [words, setWords] =  useState([]);
+
+interface Words {
+  id: number;
+  name: string;
+  published: boolean;
+  description: string | null;
+  categories: {
+    id: number;
+    name: string;
+  }[];
+}
+
+
+const [words, setWords] =  useState<Words[]>([]);
 
 const goToCategories= () => {
     navigate('/categories')
@@ -33,6 +46,7 @@ const config = {
           navigate("/login")
         }
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
 

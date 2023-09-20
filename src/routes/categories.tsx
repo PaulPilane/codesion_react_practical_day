@@ -9,7 +9,16 @@ const access_token = localStorage.getItem("token")
 
 const navigate = useNavigate();
 
-const [categories, setCategories] =  useState([]);
+const goToRegister = () => {
+  navigate("/register")
+}
+
+interface Category {
+  id: number;
+  name: string;
+}
+
+const [categories, setCategories] =  useState<Category[]>([]);
 
 const config = {
   method: 'get',
@@ -31,6 +40,7 @@ const config = {
           navigate("/login")
         }
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     
@@ -47,6 +57,11 @@ const config = {
             {category.name}
           </Link>
         ))}
+      </div>
+
+
+      <div>
+        <button onClick={goToRegister} type="button"> </button>
       </div>
     </>
 
