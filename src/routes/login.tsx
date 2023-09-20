@@ -43,8 +43,11 @@ export default function Login() {
      },
    });
    return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-  <form onSubmit={formik.handleSubmit} className="max-w-md mx-auto mt-4 p-4 border rounded-lg shadow-md">
+ <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+  <form
+    onSubmit={formik.handleSubmit}
+    className="w-full max-w-2xl mx-auto mt-4 p-8 border rounded-lg shadow-lg bg-white transition-transform transform hover:scale-105"
+  >
     <div className="mb-4">
       <label htmlFor="username" className="block text-gray-600">Username</label>
       <input
@@ -53,7 +56,7 @@ export default function Login() {
         type="text"
         onChange={formik.handleChange}
         value={formik.values.username}
-        className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+        className="w-full px-3 py-2 border rounded-lg focus:outline-none hover:border-green-300 focus:border-green-700"
       />
     </div>
 
@@ -65,15 +68,20 @@ export default function Login() {
         type="password"
         onChange={formik.handleChange}
         value={formik.values.password}
-        className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+        className="w-full px-3 py-2 border rounded-lg focus:outline-none hover:border-green-300 focus:border-green-700"
       />
     </div>
 
-    <button type="submit" className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-300 ease-in-out">
+    <button
+      type="submit"
+      className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-300 ease-in-out"
+    >
       Login
     </button>
   </form>
 </div>
+
+
 
    );
 }

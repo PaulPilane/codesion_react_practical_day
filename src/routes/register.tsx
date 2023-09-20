@@ -55,17 +55,20 @@ export default function Register() {
    });
    return (
     <>
- <div className="flex flex-col px-5 items-center justify-center min-h-screen">
-  <form onSubmit={formik.handleSubmit} className="max-w-xl mx-auto mt-4 p-4 border rounded-lg shadow-md">
+ <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+  <form
+    onSubmit={formik.handleSubmit}
+    className="w-full max-w-2xl mx-auto mt-4 p-8 border rounded-lg shadow-lg bg-white transition-transform transform hover:scale-105"
+  >
     <div className="mb-4">
       <label htmlFor="name" className="block text-gray-600">Name</label>
       <input
         type="text"
         id="name"
-        placeholder="<NAME>"
+        placeholder="Name"
         onChange={formik.handleChange}
         value={formik.values.name}
-        className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+        className="w-full px-3 py-2 border rounded-lg focus:outline-none hover:border-green-300 focus:border-green-700"
       />
     </div>
 
@@ -74,10 +77,10 @@ export default function Register() {
       <input
         type="text"
         id="surname"
-        placeholder="<SURNAME>"
+        placeholder="Surname"
         onChange={formik.handleChange}
         value={formik.values.surname}
-        className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+        className="w-full px-3 py-2 border rounded-lg focus:outline-none hover:border-green-300 focus:border-green-700"
       />
     </div>
 
@@ -86,10 +89,10 @@ export default function Register() {
       <input
         type="text"
         id="email"
-        placeholder="<EMAIL>"
+        placeholder="Email"
         onChange={formik.handleChange}
         value={formik.values.email}
-        className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+        className="w-full px-3 py-2 border rounded-lg focus:outline-none hover:border-green-300 focus:border-green-700"
       />
     </div>
 
@@ -98,14 +101,17 @@ export default function Register() {
       <input
         type="text"
         id="role"
-        placeholder="<ROLE>"
+        placeholder="Role"
         onChange={formik.handleChange}
         value={formik.values.role}
-        className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+        className="w-full px-3 py-2 border rounded-lg focus:outline-none hover:border-green-300 focus:border-green-700"
       />
     </div>
 
-    <button type="submit" className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-300 ease-in-out">
+    <button
+      type="submit"
+      className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-300 ease-in-out"
+    >
       Register
     </button>
   </form>

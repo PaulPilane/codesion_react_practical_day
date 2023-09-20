@@ -52,27 +52,28 @@ const config = {
 
     
       return (
-       <div className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="text-3xl font-bold">Words of</h1>
-        <div className="flex mt-4">
-            {words.map((word) => (
-            <div
-                key={word.id}
-                className="bg-white border border-gray-200 rounded-lg shadow p-2 mr-2"
-            >
-                {word.name}
-            </div>
-            ))}
-        </div>
+      <div className="flex flex-col items-center justify-center min-h-screen">
+      <h1 className="text-3xl font-bold">Words of</h1>
+      <div className="flex mt-4">
+        {words.map((word) => (
+          <div
+            key={word.id}
+            className="bg-white border border-gray-200 rounded-lg shadow p-2 mr-2 transition-transform hover:scale-110 transform-origin-center"
+          >
+            {word.name}
+          </div>
+        ))}
+      </div>
 
-        <button
-            onClick={goToCategories}
-            type="button"
-            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300 ease-in-out"
-        >
-            Back
-        </button>
-        </div>
+      <button
+        onClick={goToCategories}
+        type="button"
+        className="mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300 ease-in-out"
+      >
+        Back
+      </button>
+    </div>
+
 
 
 
