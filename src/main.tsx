@@ -11,10 +11,11 @@ import Word from "./pages/words";
 import UpdateUser from "./pages/updateUser";
 import AddWord from "./pages/addWords";
 import Home from "./pages/home";
+import Error from "./pages/Error";
 
 const router = createBrowserRouter([
   {
-    path: "/login",
+    path: "/",
     element: <Login/>,
   },
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <h1>Not found</h1>,
+    element: <Error/>,
   },
   {
     path: "update-user",
