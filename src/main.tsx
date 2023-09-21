@@ -9,11 +9,13 @@ import Register from "./pages/register";
 import Categories from "./pages/categories";
 import Word from "./pages/words";
 import UpdateUser from "./pages/updateUser";
+import AddWord from "./pages/addWords";
+import Home from "./pages/home";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <h1>Home</h1>,
+    path: "/login",
+    element: <Login/>,
   },
   {
     path: "/login",
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
   {
     path: "update-user",
     element: <UpdateUser/>
+  }, 
+  {
+    path: "/category/:id/words",
+    element: <AddWord/>
+  },
+  {
+    path: "/home",
+    element: <Home/>,
   }
   
 ]);

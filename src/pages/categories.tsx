@@ -9,8 +9,8 @@ const access_token = localStorage.getItem("token")
 
 const navigate = useNavigate();
 
-const goToRegister = () => {
-  navigate("/register")
+const goToHome = () => {
+  navigate("/home")
 }
 
 interface Category {
@@ -60,11 +60,11 @@ const config = {
 
       <div className="mt-4 flex justify-center">
         <button
-          onClick={goToRegister}
+          onClick={goToHome}
           type="button"
-          className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300 ease-in-out"
+          className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition duration-300 ease-in-out"
         >
-          Back To Register
+          home
         </button>
       </div>
     </>
