@@ -69,7 +69,7 @@ const navigate = useNavigate();
 
         axios.request(config)
         .then(() => {
-            navigate('/register')
+            navigate('/home')
         })
         .catch((error) => {
         console.log(error);
@@ -166,7 +166,7 @@ const navigate = useNavigate();
     ) : null}
   </div>
 
-  
+
         <button
         type="submit"
         className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition duration-300 ease-in-out"
