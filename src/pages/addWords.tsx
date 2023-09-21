@@ -9,14 +9,20 @@ export default function AddWord() {
       const navigate = useNavigate()
        const access_token = localStorage.getItem("token");
 
-
     const { id } = useParams();
 
  const formik = useFormik({
      initialValues: {
        wordId: NaN
      },
+
      onSubmit: values => {
+      if(Number.isNaN(values.wordId)) {
+        formik.setErrors({ wordId: 'Word Id is required' });
+      }
+      if(values.wordId < 1) {
+        formik.setErrors({ wordId: 'Word Id must be at least 1' });
+      }
        const data = {
             wordId : values.wordId
         };
@@ -57,6 +63,9 @@ export default function AddWord() {
         value={formik.values.wordId}
         className="w-full px-3 py-2 border rounded-lg focus:outline-none hover:border-green-300 focus:border-green-700"
       />
+      {formik.touched.wordId && formik.errors.wordId ? (
+        <div className="text-red-600">{formik.errors.wordId}</div>
+      ) : null}
     </div>
 
     <button

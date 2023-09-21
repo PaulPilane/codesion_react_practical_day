@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import axios from "axios"
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Login() {
@@ -51,7 +51,7 @@ export default function Login() {
         axios.request(config)
         .then((response) => {
         localStorage.setItem('token', response.data.access_token)
-        navigate("/Register")
+        navigate("/home")
         })
         .catch((error) => {
         console.log(error);
@@ -103,12 +103,6 @@ export default function Login() {
     </button>
      
   </form>
-   <Link
-        to={`/update-user`}
-        className="ml-4 mt-5 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition duration-300 ease-in-out"
-      >
-        Update Profile
-      </Link>
 </div>
 
 
